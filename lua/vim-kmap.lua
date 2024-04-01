@@ -24,3 +24,5 @@ vim.api.nvim_set_keymap("n","<leader>mf", ":vsplit | Telescope find_files<CR>",{
 
 vim.api.nvim_set_keymap("n", "<leader>gg", ":Neogit<CR>", { noremap = true, silent = true })
 
+-- shortcuts for opening Trouble map 
+vim.api.nvim_set_keymap("n", "<leader>e", ":Trouble<CR>", { noremap = true, silent = true })
