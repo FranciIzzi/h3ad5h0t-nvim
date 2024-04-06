@@ -6,7 +6,10 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 
 -- Cursor settings --
-vim.cmd("set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:block-Cursor/lCursor,r-cr-o:block-Cursor/lCursor")
+vim.cmd([[set guicursor=n-v-c:block-Cursor/lCursor,r-cr-o:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor]])
+vim.cmd[[
+  highlight CursorLineNr term=bold  cterm=bold gui=bold guifg=#FFD700
+]]
 
 vim.cmd("set number")
 vim.cmd("set autoindent")
@@ -33,8 +36,4 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.cursorline = true
-
-vim.cmd[[
-  highlight CursorLineNr term=bold  cterm=bold gui=bold guifg=#FFD700
-]]
 
