@@ -22,13 +22,32 @@ return {
 			lspconfig.dartls.setup({
 				cmd = { "dart", "language-server", "--protocol=lsp" },
 			})
+			lspconfig.bashls.setup({
+				capabilities = capabilities,
+			})
 			lspconfig.vimls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.tsserver.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.pyright.setup({
+			lspconfig.pylsp.setup({
+				capabilities = capabilities,
+				settings = {
+					pylsp = {
+						plugins = {
+							pycodestyle = {
+								ignore = { "W503", "W391", "W293", "W291" },
+								maxLineLength = 200,
+							},
+						},
+					},
+				},
+			})
+			lspconfig.jinja_lsp.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.bashls.setup({
@@ -41,12 +60,6 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.jsonls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.ruff_lsp.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.pyre.setup({
 				capabilities = capabilities,
 			})
 			kmap.set("n", "K", vim.lsp.buf.hover, {})
