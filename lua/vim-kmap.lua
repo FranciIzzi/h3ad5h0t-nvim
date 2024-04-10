@@ -19,11 +19,22 @@ vim.api.nvim_set_keymap("n", "<Tab>8", "<cmd>BufferLineGoToBuffer 8<CR>", { nore
 vim.api.nvim_set_keymap("n", "<Tab>9", "<cmd>BufferLineGoToBuffer 9<CR>", { noremap = true, silent = true })
 
 -- macro per muovere un file in verticale
-vim.api.nvim_set_keymap("n","<leader>mf", ":vsplit | Telescope find_files<CR>",{noremap = true, silent = true})
-
+vim.api.nvim_set_keymap("n", "<leader>mf", ":vsplit | Telescope find_files<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<leader>gg", ":Neogit<CR>", { noremap = true, silent = true })
 
--- shortcuts for opening Trouble map 
+-- shortcuts for opening Trouble map
 vim.api.nvim_set_keymap("n", "<leader>e", ":Trouble<CR>", { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap("n", "<C-s>", ":wa<CR>", { noremap = true, silent = true })
+
+-- 0 is for going to to the beginnig of the line
+
+
+-- Working with TODO file for tasks
+function OpenTodoBuffer()
+    vim.cmd("botright split ~/.config/nvim/TODO.md")
+    vim.cmd("setlocal filetype=todo")
+end
+
+vim.cmd("command! TodoOpen lua OpenTodoBuffer()<CR>")
