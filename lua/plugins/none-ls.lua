@@ -7,10 +7,12 @@ return {
 			sources = {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.shellharden,
+				null_ls.builtins.formatting.tsstandard,
 				null_ls.builtins.formatting.prettier,
 				null_ls.builtins.formatting.golines,
 				null_ls.builtins.formatting.black,
-        null_ls.builtins.formatting.djlint,
+				null_ls.builtins.formatting.djlint,
+				null_ls.builtins.formatting.htmlbeautifier,
 			},
 		})
 		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
