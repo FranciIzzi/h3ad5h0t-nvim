@@ -1,11 +1,15 @@
   # TODO LIST #
 
-...GESTHUB
+...CENSHUB
 
-- [ ] mettere nei SAL prima l'importo nella scheda 2 e poi il resto
-- [ ] oscurare in contratti situazione contabile e rimborso quando creo uno nuovo
-- [ ] aggiungere manytomany in contratto per sal e attività
-- [ ] cambiare nome che si vede in contratto, deve vedersi solo codice e nome
-- [ ] fuzzy search ovunque check
-- [ ] aggiungere questione dell'acconto 
-- [ ] girare ragionamento della situazione contabile
+- [ ] refactoring del backend  
+    - [ ] classe di endpoints per fabbricati
+    - [ ] classe di endpoints per immobili
+- [ ] implementazione delle nuove modifiche nel front end
+    - [ ] nuove funzioni di censimento con errori chiari
+    - [ ] nuove funzioni di editing nella ricerca
+- [ ] web socket collegamento frontend-backend
+    - [ ] gestione delle sessioni 
+    - [ ] gestione dei dati tempo reale 
+- [ ] espandere la dashboard con nuovi grafici
+- [ ] ottimizzazre il fetch dati
