@@ -1,8 +1,9 @@
--- Comment Line
 return {
 	"numToStr/Comment.nvim",
+  lazy = {
+    event = {'VimEnter'},
+  },
 	opts = {},
-	lazy = false,
 	config = function()
 		require("Comment").setup()
 	end,

@@ -37,3 +37,4 @@ opt.splitbelow = true
 
 opt.cursorline = true
 
+opt.signcolumn = "yes"

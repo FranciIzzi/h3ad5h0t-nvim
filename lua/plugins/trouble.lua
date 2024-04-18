@@ -2,10 +2,9 @@ return {
 	"folke/trouble.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {
-		position = "bottom", -- position of the list can be: bottom, top, left, right
-		height = 20, -- height of the trouble list when position is top or bottom
-		-- width = 50, -- width of the list when position is left or right
-		icons = true, -- use devicons for filenames
+		position = "bottom",
+		height = 20,
+		icons = true,
 		mode = "workspace_diagnostics", -- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
 		severity = nil, -- nil (ALL) or vim.diagnostic.severity.ERROR | WARN | INFO | HINT
 		fold_open = "", -- icon used for open folds
@@ -14,11 +13,9 @@ return {
 		padding = true, -- add an extra new line on top of the list
 		cycle_results = true, -- cycle item list when reaching beginning or end of list
 		action_keys = { -- key mappings for actions in the trouble list
-			-- map to {} to remove a mapping, for example:
-			-- close = {},
-			close = "q", -- close the list
+			close = "q",
 			cancel = "<esc>", -- cancel the preview and get back to your last window / buffer / cursor
-			refresh = "r", -- manually refresh
+			refresh = "r",
 			jump = { "<cr>", "<tab>", "<2-leftmouse>" }, -- jump to the diagnostic or open / close folds
 			open_split = { "<c-x>" }, -- open buffer in new split
 			open_vsplit = { "<c-v>" }, -- open buffer in new vsplit
@@ -35,7 +32,7 @@ return {
 			toggle_fold = { "zA", "za" }, -- toggle fold of current file
 			previous = "k", -- previous item
 			next = "j", -- next item
-			help = "?", -- help menu
+			help = "?",
 		},
 		multiline = true, -- render multi-line messages
 		indent_lines = true, -- add an indent guide below the fold icons
@@ -47,13 +44,12 @@ return {
 		auto_jump = { "lsp_definitions" }, -- for the given modes, automatically jump if there is only a single result
 		include_declaration = { "lsp_references", "lsp_implementations", "lsp_definitions" }, -- for the given modes, include the declaration of the current symbol in the results
 		signs = {
-			-- icons / text used for a diagnostic
 			error = "",
 			warning = "",
 			hint = "",
 			information = "",
 			other = "",
 		},
-		use_diagnostic_signs = false, -- enabling this will use the signs defined in your lsp client
+		use_diagnostic_signs = false,
 	},
 }

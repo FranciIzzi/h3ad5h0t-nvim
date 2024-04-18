@@ -25,7 +25,7 @@ return {
 			lspconfig.bashls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.jamlls.setup({
+			lspconfig.spectral.setup({
 				capabilities = capabilities,
 			})
 
@@ -45,7 +45,7 @@ return {
 						plugins = {
 							pycodestyle = {
 								ignore = { "W503", "W391", "W293", "W291" },
-								maxLineLength = 200,
+								maxLineLength = 300,
 							},
 						},
 					},

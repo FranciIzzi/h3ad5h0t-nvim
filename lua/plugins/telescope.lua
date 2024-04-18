@@ -1,4 +1,3 @@
--- Telescope --
 return {
 	{
 		"nvim-telescope/telescope.nvim",
@@ -7,9 +6,9 @@ return {
 		config = function()
 			local kmap = vim.keymap
 			local builtin = require("telescope.builtin")
-			-- some KeyBindings for Telescope
 			kmap.set("n", "<C-p>", builtin.find_files, {})
 			kmap.set("n", "<leader>fg", builtin.live_grep, {})
+			kmap.set("n", "<leader>gl", builtin.grep_string, {})
 			kmap.set("n", "<leader>fb", builtin.buffers, {})
 			kmap.set("n", "<leader>of", builtin.oldfiles, {})
 			kmap.set("n", "<leader>ch", builtin.command_history, {})
@@ -23,7 +22,6 @@ return {
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown({
-							-- even more opts
 						}),
 					},
 				},

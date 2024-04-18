@@ -28,15 +28,6 @@ vim.api.nvim_set_keymap("n", "<leader>e", ":Trouble<CR>", { noremap = true, sile
 
 vim.api.nvim_set_keymap("n", "<C-s>", ":wa<CR>", { noremap = true, silent = true })
 
-
--- Working with TODO file for tasks
-function OpenTodoBuffer()
-   vim.cmd("botright split ~/.config/nvim/TODO.md")
-   vim.cmd("setlocal filetype=todo")
-end
-
-vim.cmd("command! TodoOpen lua OpenTodoBuffer()<CR>")
-
 -- Lista di tag HTML 
 local html_tags = {
     "a", "abbr", "address", "area", "article", "aside", "audio", "b", "base", "bdi", "bdo", "blockquote", "body", "br",
@@ -76,6 +67,4 @@ _G.insert_html_tag = function()
         end
     }):find()
 end
-
-
 
