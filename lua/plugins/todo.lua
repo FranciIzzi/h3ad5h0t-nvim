@@ -1,9 +1,7 @@
 return {
   "aserebryakov/vim-todo-lists",
-  lazy = {
-    event = "VimEnter",
-    ft = { "markdown", "todo", "txt" },
-  },
+  event = "VimEnter",
+  ft = { "markdown", "todo", "txt" },
   config = function()
     vim.g.VimTodoListsUndoneItem = "- [ ]"
     vim.g.VimTodoListsDoneItem = "- [X]"
