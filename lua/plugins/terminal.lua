@@ -21,7 +21,7 @@ return {
     config = function()
       require("toggleterm").setup({
         size = 17,
-        open_mapping = [[<c-t>]],
+        open_mapping = [[<leader>t]],
         hide_numbers = true,
         shade_filetypes = {},
         autochdir = true,

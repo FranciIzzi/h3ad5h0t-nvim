@@ -6,9 +6,9 @@ return {
 		config = function()
 			local kmap = vim.keymap
 			local builtin = require("telescope.builtin")
-			kmap.set("n", "<C-p>", builtin.find_files, {})
+			kmap.set("n", "<leader>ff", builtin.find_files, {})
 			kmap.set("n", "<leader>fg", builtin.live_grep, {})
-			kmap.set("n", "<leader>gl", builtin.grep_string, {})
+			kmap.set("n", "<leader>fw", builtin.grep_string, {})
 			kmap.set("n", "<leader>fb", builtin.buffers, {})
 			kmap.set("n", "<leader>of", builtin.oldfiles, {})
 			kmap.set("n", "<leader>ch", builtin.command_history, {})

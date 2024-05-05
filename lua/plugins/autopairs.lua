@@ -1,44 +1,44 @@
 return {
-	{
-		"kylechui/nvim-surround",
-		version = "*",
-		event = "VeryLazy",
-		config = function()
-			require("nvim-surround").setup()
-		end,
-	},
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-		config = function()
-			require("nvim-autopairs").setup({
-				disable_filetype = { "TelescopePrompt", "spectre_panel" },
-				disable_in_macro = true, -- disable when recording or executing a macro
-				disable_in_visualblock = false, -- disable when insert after visual block mode
-				disable_in_replace_mode = true,
-				ignored_next_char = [=[[%w%%%'%[%"%.%`%$]]=],
-				enable_moveright = true,
-				enable_afterquote = true, -- add bracket pairs after quote
-				enable_check_bracket_line = true, --- check bracket in same line
-				enable_bracket_in_quote = true, --
-				enable_abbr = false, -- trigger abbreviation
-				break_undo = true, -- switch for basic rule break undo sequence
-				check_ts = false,
-				fast_wrap = {
-					map = "<M-e>", -- Meta/Alt + e per avvolgere il testo (personalizza a piacere)
-					chars = { "{", "[", "(", '"', "'" },
-					pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
-					end_key = "$",
-					keys = "qwertyuiopzxcvbnmasdfghjkl",
-					check_comma = true,
-					highlight = "PmenuSel",
-					highlight_grey = "LineNr",
-				},
-				map_cr = true,
-				map_bs = true, -- map the <BS> key
-				map_c_h = false, -- Map the <C-h> key to delete a pair
-				map_c_w = false, -- map <c-w> to delete a pair if possible
-			})
-		end,
-	},
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup()
+    end,
+  },
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+      require("nvim-autopairs").setup({
+        disable_filetype = { "TelescopePrompt", "spectre_panel" },
+        disable_in_macro = true,
+        disable_in_visualblock = false,
+        disable_in_replace_mode = true,
+        ignored_next_char = [=[[%w%%%'%[%"%.%`%$]]=],
+        enable_moveright = true,
+        enable_afterquote = true,
+        enable_check_bracket_line = true,
+        enable_bracket_in_quote = true,
+        enable_abbr = false,
+        break_undo = true,
+        check_ts = false,
+        fast_wrap = {
+          map = "<M-e>",
+          chars = { "{", "[", "(", '"', "'" },
+          pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
+          end_key = "$",
+          keys = "qwertyuiopzxcvbnmasdfghjkl",
+          check_comma = true,
+          highlight = "PmenuSel",
+          highlight_grey = "LineNr",
+        },
+        map_cr = true,
+        map_bs = true,
+        map_c_h = false,
+        map_c_w = false,
+      })
+    end,
+  },
 }

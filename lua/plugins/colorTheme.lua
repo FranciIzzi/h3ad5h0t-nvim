@@ -19,10 +19,8 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("kanagawa").setup({
-				theme = "dragon",
-			})
-			vim.cmd.colorscheme("kanagawa")
+			require("kanagawa").setup({})
+			vim.cmd.colorscheme("kanagawa-dragon")
 		end,
 	},
 }

@@ -3,6 +3,7 @@
         "vim",
         "fun",
         "return",
-        "lvim"
+        "lvim",
+        "createTodoTitle"
     ]
 }

@@ -17,21 +17,19 @@ function OpenNvimConfig()
   vim.cmd("edit init.lua")
 end
 
-function CreateNewFile()
-  local newFileName = vim.fn.input("Nome File: ")
-  if newFileName == "" then
-    return
+function OpenZellijConfig()
+  local current_dir = vim.fn.getcwd()
+  local nvim_config_dir = vim.fn.expand("~/.config/zellij")
+
+  if current_dir ~= nvim_config_dir then
+    vim.cmd("cd " .. nvim_config_dir)
+    vim.cmd("Neotree dir=" .. nvim_config_dir)
+  else
+    vim.cmd("Neotree dir=" .. nvim_config_dir)
   end
-
-  vim.cmd("edit " .. newFileName)
-  vim.cmd("autocmd BufWritePre <buffer> lua SaveNewFileAs()")
+  vim.cmd("edit config.kdl")
 end
 
-function SaveNewFileAs()
-  local path = vim.fn.input("Salva in: ", vim.fn.getcwd() .. "/", "file")
-  vim.cmd("silent! saveas " .. path)
-  vim.cmd("autocmd! BufWritePre <buffer>")
-end
 
 return {
   "nvimdev/dashboard-nvim",
@@ -68,9 +66,10 @@ return {
           },
           {
             icon = " ",
-            desc = "New file",
+            icon_hl = "@function",
+            desc = "Zellij Config",
             group = "Function",
-            action = "lua CreateNewFile()",
+            action = "lua OpenZellijConfig()",
             key = "a",
           },
           {
