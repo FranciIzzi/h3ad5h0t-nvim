@@ -1,0 +1,6 @@
+require("h3ad5h0t.core.vim-options")
+require("h3ad5h0t.core.vim-kmap")
+require("h3ad5h0t.core.autocmd")
+require("h3ad5h0t.core.remap")
+require("h3ad5h0t.core.todo-keymap")
+require("h3ad5h0t.core.plugin-manager")

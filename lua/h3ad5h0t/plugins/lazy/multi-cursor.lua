@@ -1,6 +1,8 @@
 return {
 	"smoka7/multicursors.nvim",
-	event = "VeryLazy",
+	lazy = {
+		commands = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
+	},
 	dependencies = {
 		"smoka7/hydra.nvim",
 	},

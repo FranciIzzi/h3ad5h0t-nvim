@@ -1,4 +1,3 @@
--- Git setup
 return {
   {
     "NeogitOrg/neogit",
@@ -22,22 +21,15 @@ return {
           current = "DiffAdd",
         },
         default_mappings = {
-          ours = "o",
-          theirs = "t",
-          none = "0",
-          both = "b",
-          next = "n",
-          prev = "p",
+          ours = "co",
+          theirs = "ct",
+          none = "c0",
+          both = "cb",
+          next = "gn",
+          prev = "gp",
         },
       })
     end,
-  },
-  {
-    "kdheepak/lazygit.nvim",
-    cmd = "LazyGit",
-  },
-  {
-    "tpope/vim-fugitive",
   },
   {
     "lewis6991/gitsigns.nvim",

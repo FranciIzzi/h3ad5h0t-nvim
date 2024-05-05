@@ -1,6 +1,6 @@
 return {
 	"kevinhwang91/nvim-ufo",
-	event = "VimEnter",
+	event = "BufReadPost",
 	dependencies = "kevinhwang91/promise-async",
 	config = function()
 		vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]

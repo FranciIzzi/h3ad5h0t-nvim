@@ -1,6 +1,5 @@
 return {
   "aserebryakov/vim-todo-lists",
-  event = "VimEnter",
   ft = { "markdown", "todo", "txt" },
   config = function()
     vim.g.VimTodoListsUndoneItem = "- [ ]"

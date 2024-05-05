@@ -1,24 +1,21 @@
-vim.api.nvim_set_keymap("n", "<leader>p", "\"_dP", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>q", ":bd<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>se", function() require("scissors").editSnippet() end)
+vim.keymap.set({ "n", "x" }, "<leader>sa", function() require("scissors").addNewSnippet() end)
+
 vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>dh", ":Dashboard<CR>", { noremap = true, silent = true })
 
--- Switch buffers shortcuts
 vim.api.nvim_set_keymap("n", "<leader>bco", ":BufferLineCloseOthers<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>bch", ":BufferLineCloseRight<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>bcl", ":BufferLineCloseLeft<CR>", { noremap = true, silent = true })
 
--- shortcuts per muovere un file in verticale
 vim.api.nvim_set_keymap("n", "<leader>mf", ":vsplit | Telescope find_files<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<leader>gg", ":Neogit<CR>", { noremap = true, silent = true })
 
--- shortcuts for opening Trouble map
 vim.api.nvim_set_keymap("n", "<leader>e", ":Trouble<CR>", { noremap = true, silent = true })
 
 
--- Lista di tag HTML 
 local html_tags = {
     "a", "abbr", "address", "area", "article", "aside", "audio", "b", "base", "bdi", "bdo", "blockquote", "body", "br",
     "button", "canvas", "caption", "cite", "code", "col", "colgroup", "data", "datalist", "dd", "del", "details", "dfn",

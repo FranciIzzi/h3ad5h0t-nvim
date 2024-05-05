@@ -1,5 +1,5 @@
 function OpenTodo()
-	local todo_file = vim.fn.expand("~/.config/nvim/list.todo.md")
+	local todo_file = vim.fn.expand("~/.config/nvim/lua/todo/list.todo.md")
 	local file_exists = vim.fn.filereadable(todo_file) == 1
 	if not file_exists then
 		local f = io.open(todo_file, "w")

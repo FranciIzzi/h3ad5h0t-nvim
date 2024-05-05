@@ -1,6 +1,9 @@
 return {
 	{
 		"rcarriga/nvim-dap-ui",
+		lazy = {
+			commands = { "LoadDebug" },
+		},
 		dependencies = {
 			"mfussenegger/nvim-dap",
 			"nvim-neotest/nvim-nio",
@@ -124,12 +127,16 @@ return {
 			vim.keymap.set("n", "<leader>do", dap.step_over, {})
 			vim.keymap.set("n", "<leader>di", dap.step_into, {})
 			vim.keymap.set("n", "<leader>db", dap.step_out, {})
-			vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint, {})
+			vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, {})
 			vim.keymap.set("n", "<leader>dr", dap.repl.open, {})
 		end,
+		cmd = "LoadDebug",
 	},
 	{
 		"mfussenegger/nvim-dap-python",
+		lazy = {
+			commands = { "LoadDebug" },
+		},
 		dependencies = {
 			"mfussenegger/nvim-dap",
 			"rcarriga/nvim-dap-ui",
@@ -138,5 +145,6 @@ return {
 			local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
 			require("dap-python").setup(path)
 		end,
+		cmd = "LoadDebug",
 	},
 }

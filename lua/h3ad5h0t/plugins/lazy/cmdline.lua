@@ -1,8 +1,6 @@
--- middle cmdline mode
 return {
 	"folke/noice.nvim",
-	enabled = false,
-	event = "VeryLazy",
+  lazy = true,
 	dependencies = {
 		"MunifTanjim/nui.nvim",
 		"rcarriga/nvim-notify",
