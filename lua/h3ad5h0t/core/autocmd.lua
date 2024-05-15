@@ -39,25 +39,10 @@ vim.cmd([[
   augroup END
 ]])
 
-local function safe_del_keymap(mode, lhs)
-  local status, err = pcall(vim.api.nvim_del_keymap, mode, lhs)
-  if not status then
-    print("Attempted to remove non-existent keymap:", lhs, "Error:", err)
-  end
-end
-
 vim.api.nvim_create_autocmd({ "BufEnter", "BufNewFile" }, {
   pattern = { "*.tsx" },
   group = "TsxTagInsert",
   callback = function()
-    vim.api.nvim_set_keymap("n", "html", ":lua insert_html_tag()<CR>", { noremap = true, silent = true })
-  end,
-})
-
-vim.api.nvim_create_autocmd({ "BufLeave" }, {
-  pattern = { "*.tsx" },
-  group = "TsxTagInsert",
-  callback = function()
-    safe_del_keymap("n", "<leader>ht")
+    vim.api.nvim_set_keymap("n", "<leader>htx", ":lua insert_html_tag()<CR>", { noremap = true, silent = true })
   end,
 })

@@ -76,8 +76,8 @@ return {
 					type = "dart",
 					request = "launch",
 					name = "Launch dart",
-					dartSdkPath = "/home/h3ad5h0t/Desktop/flutter/bin/dart",
-					flutterSdkPath = "/home/h3ad5h0t/Desktop/flutter/bin/flutter",
+					dartSdkPath = "/home/h3ad5h0t/flutter/bin/dart",
+					flutterSdkPath = "/home/h3ad5h0t/flutter/bin/flutter",
 					program = "${workspaceFolder}/lib/main.dart",
 					cwd = "${workspaceFolder}",
 				},
@@ -85,8 +85,8 @@ return {
 					type = "flutter",
 					request = "launch",
 					name = "Launch flutter",
-					dartSdkPath = "/home/h3ad5h0t/Desktop/flutter/bin/dart",
-					flutterSdkPath = "/home/h3ad5h0t/Desktop/flutter/bin/flutter",
+					dartSdkPath = "/home/h3ad5h0t/flutter/bin/dart",
+					flutterSdkPath = "/home/h3ad5h0t/flutter/bin/flutter",
 					program = "${workspaceFolder}/lib/main.dart",
 					cwd = "${workspaceFolder}",
 				},
@@ -100,7 +100,7 @@ return {
 					program = "${workspaceFolder}/manage.py",
 					args = { "runserver", "0.0.0.0:8000" },
 					pythonPath = function()
-						return "/home/h3ad5h0t/Desktop/Back-End/ENVS/censhub/bin/python"
+						return "/home/h3ad5h0t/Desktop/DeDPartners/Back-End/.my_ENVS/censhub/bin/python"
 					end,
 					justMyCode = false,
 				},
@@ -127,7 +127,7 @@ return {
 			vim.keymap.set("n", "<leader>do", dap.step_over, {})
 			vim.keymap.set("n", "<leader>di", dap.step_into, {})
 			vim.keymap.set("n", "<leader>db", dap.step_out, {})
-			vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, {})
+			vim.keymap.set("n", "<leader> :db", dap.toggle_breakpoint, {})
 			vim.keymap.set("n", "<leader>dr", dap.repl.open, {})
 		end,
 		cmd = "LoadDebug",

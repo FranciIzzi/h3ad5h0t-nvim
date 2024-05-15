@@ -15,9 +15,8 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			-- Setup language servers.
-			local kmap = vim.keymap
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+        local kmap = vim.keymap
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 			lspconfig.dartls.setup({
 				cmd = { "dart", "language-server", "--protocol=lsp" },
@@ -46,15 +45,13 @@ return {
 							pycodestyle = {
 								ignore = { "W503", "W391", "W293", "W291", "E722" },
 								maxLineLength = 300,
+                  cicle_complexity = 30,
 							},
 						},
 					},
 				},
 			})
 			lspconfig.jinja_lsp.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.bashls.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.gopls.setup({

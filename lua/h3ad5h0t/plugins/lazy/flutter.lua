@@ -12,7 +12,7 @@ return {
           enabled = true,
           run_via_dap = true,
         },
-        flutter_path = "/home/h3ad5h0t/Desktop/flutter/bin/flutter",
+        flutter_path = "/home/h3ad5h0t/flutter/bin/flutter",
       })
     end,
   },

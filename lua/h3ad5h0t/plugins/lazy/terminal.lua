@@ -1,6 +1,13 @@
 return {
 	"akinsho/toggleterm.nvim",
-  event = "VeryLazy",
+	lazy = {
+		commands = {
+			"ToggleTerm",
+			"ToggleTermToggleAll",
+			"ToggleTermSendCurrentLine",
+			"ToggleTermSendVisualLines",
+		},
+	},
 	version = "*",
 	config = function()
 		require("toggleterm").setup({
