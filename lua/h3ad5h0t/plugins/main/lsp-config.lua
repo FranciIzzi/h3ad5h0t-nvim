@@ -21,6 +21,9 @@ return {
 			lspconfig.dartls.setup({
 				cmd = { "dart", "language-server", "--protocol=lsp" },
 			})
+      lspconfig.svelte.setup({
+        capabilities = capabilities,
+      })
 			lspconfig.bashls.setup({
 				capabilities = capabilities,
 			})

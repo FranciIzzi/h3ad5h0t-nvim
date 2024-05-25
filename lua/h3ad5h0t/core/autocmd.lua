@@ -7,8 +7,6 @@ vim.api.nvim_create_autocmd("BufLeave", {
                 visible_buffer_count = visible_buffer_count + 1
             end
         end
-
-        -- Se c'è un solo buffer visibile e questo è vuoto, lancia Dashboard
         if visible_buffer_count == 1 then
             local line_count = vim.api.nvim_buf_line_count(0) -- Conta le linee nel buffer corrente
             if line_count == 1 and vim.api.nvim_get_current_line() == "" then
@@ -43,6 +41,6 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufNewFile" }, {
   pattern = { "*.tsx" },
   group = "TsxTagInsert",
   callback = function()
-    vim.api.nvim_set_keymap("n", "<leader>htx", ":lua insert_html_tag()<CR>", { noremap = true, silent = true })
+    vim.api.nvim_set_keymap("n", "tag", ":lua insert_html_tag()<CR>", { noremap = true, silent = true })
   end,
 })

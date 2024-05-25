@@ -9,8 +9,8 @@ vim.cmd[[
 vim.cmd("set number")
 vim.cmd("set autoindent")
 vim.cmd("set mouse=a")
+vim.cmd.colorscheme("retrobox")
 vim.g.mapleader = " "
-
 local opt = vim.opt
 
 opt.ignorecase = true

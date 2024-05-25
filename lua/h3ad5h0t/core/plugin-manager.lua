@@ -1,5 +1,6 @@
 local plugins_to_check = {
 	"catppuccin",
+	"toggleterm",
 }
 
 local function get_unloaded_plugins()
