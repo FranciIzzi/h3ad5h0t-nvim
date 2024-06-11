@@ -10,7 +10,7 @@ return {
 				show_buffer_close_icons = true,
 				show_close_icon = false,
 				show_tab_indicators = true,
-				separator_style = "slant",
+				separator_style = "thin",
 				enforce_regular_tabs = false,
 				always_show_bufferline = true,
 				diagnostics = "nvim_lsp",

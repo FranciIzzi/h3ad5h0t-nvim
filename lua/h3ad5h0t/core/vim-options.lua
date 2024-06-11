@@ -3,9 +3,9 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd([[set guicursor=n-v-c:block-Cursor/lCursor,r-cr-o:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor]])
-vim.cmd[[
+vim.cmd([[
   highlight CursorLineNr term=bold  cterm=bold gui=bold guifg=#FFD700
-]]
+]])
 vim.cmd("set number")
 vim.cmd("set autoindent")
 vim.cmd("set mouse=a")
@@ -24,4 +24,3 @@ opt.autoread = true
 opt.splitright = true
 opt.splitbelow = true
 opt.cursorline = true
-opt.signcolumn = "yes"

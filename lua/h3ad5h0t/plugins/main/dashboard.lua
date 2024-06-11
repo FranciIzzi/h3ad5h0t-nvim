@@ -31,10 +31,15 @@ end
 return {
 	"nvimdev/dashboard-nvim",
 	event = "VimEnter",
+	dependencies = { { "nvim-tree/nvim-web-devicons" } },
 	config = function()
 		local function custom_header()
 			local datetime = os.date(" %d-%m-%Y - %H:%M:%S ")
 			return {
+				"",
+				"",
+				"",
+				"",
 				"",
 				" ██╗  ██╗    ██████╗      █████╗     ██████╗     ███████╗    ██╗  ██╗     ██████╗     ████████╗ ",
 				" ██║  ██║    ╚════██╗    ██╔══██╗    ██╔══██╗    ██╔════╝    ██║  ██║    ██╔═████╗    ╚══██╔══╝ ",
@@ -48,10 +53,10 @@ return {
 			}
 		end
 		require("dashboard").setup({
-			theme = "hyper",
+			theme = "doom",
 			config = {
 				header = custom_header(),
-				shortcut = {
+				center = {
 					{ desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
 					{
 						icon = " ",
@@ -86,8 +91,13 @@ return {
 						action = "lua QuitNeovim()",
 					},
 				},
+				footer = {
+					"",
+					"",
+					"Develeped by Francesco Izzi.",
+					"I'm Arch btw :)",
+				},
 			},
 		})
 	end,
-	dependencies = { { "nvim-tree/nvim-web-devicons" } },
 }

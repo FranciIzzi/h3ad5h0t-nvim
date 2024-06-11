@@ -9,7 +9,8 @@ vim.api.nvim_set_keymap("n", "<leader>bco", ":BufferLineCloseOthers<CR>", { nore
 vim.api.nvim_set_keymap("n", "<leader>bch", ":BufferLineCloseRight<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>bcl", ":BufferLineCloseLeft<CR>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<leader>mf", ":vsplit | Telescope find_files<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>mv", ":vsplit | Telescope find_files<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>mh", ":split | Telescope find_files<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<leader>gg", ":Neogit<CR>", { noremap = true, silent = true })
 
@@ -23,8 +24,8 @@ local html_tags = {
     "h4", "h5", "h6", "head", "header", "hr", "html", "i", "iframe", "img", "input", "ins", "kbd", "label", "legend",
     "li", "link", "main", "map", "mark", "meta", "meter", "nav", "noscript", "object", "ol", "optgroup", "option",
     "output", "p", "param", "picture", "pre", "progress", "q", "rp", "rt", "ruby", "s", "samp", "script", "section",
-    "select", "small", "source", "span", "Stack", "strong", "style", "sub", "summary", "sup", "svg", "table", "tbody", "td",
-    "template", "textarea", "tfoot", "th", "thead", "time", "title", "tr", "track", "u", "ul", "var", "video", "wbr"
+    "select","Sidebar","small", "source", "span", "Stack", "strong", "style", "sub", "summary", "sup", "svg", "table", "tbody", "td",
+    "template","text", "textarea", "tfoot", "th", "thead", "time", "title", "tr", "track", "u", "ul", "var", "video", "wbr"
 }
 
 -- Definisci la funzione nel contesto globale di Lua

@@ -1,6 +1,5 @@
--- Neotree
-
 local kmap = vim.keymap
+
 function HandleNeoTree()
   local is_neo_tree_open = function()
     for _, win in pairs(vim.api.nvim_list_wins()) do
