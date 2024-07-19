@@ -11,7 +11,6 @@ return {
 	version = "*",
 	config = function()
 		require("toggleterm").setup({
-			size = 17,
 			open_mapping = [[<leader>t]],
 			hide_numbers = true,
 			shade_filetypes = {},
@@ -22,7 +21,7 @@ return {
 			terminal_mappings = true,
 			persist_size = true,
 			persist_mode = true,
-			direction = "horizontal",
+			direction = "float",
 			close_on_exit = true,
 			shell = vim.o.shell,
 			auto_scroll = true,

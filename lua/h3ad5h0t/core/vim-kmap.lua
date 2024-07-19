@@ -50,6 +50,8 @@ _G.insert_html_tag = function()
                 local tagText = string.format('<%s></%s>', selection.value, selection.value)
                 vim.api.nvim_put({tagText}, 'c', true, true)
                 vim.api.nvim_feedkeys("T><i", "n", true)
+                vim.api.nvim_feedkeys("n", "n", true)
+                vim.api.nvim_feedkeys("h", "n", true)
             end)
             return true
         end

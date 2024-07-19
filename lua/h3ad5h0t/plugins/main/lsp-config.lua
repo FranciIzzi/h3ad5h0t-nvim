@@ -24,6 +24,9 @@ return {
       lspconfig.svelte.setup({
         capabilities = capabilities,
       })
+      lspconfig.templ.setup({
+        capabilities = capabilities,
+      })
 			lspconfig.bashls.setup({
 				capabilities = capabilities,
 			})

@@ -25,3 +25,5 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", { noremap = true, silent = t
 keymap("n", "sv", ":vsplit <CR>", { noremap = true, silent = true })
 keymap("n", "sh", ":split <CR>", { noremap = true, silent = true })
 
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
