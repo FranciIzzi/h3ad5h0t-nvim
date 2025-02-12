@@ -19,7 +19,7 @@ keymap("n", "<leader>gg", ":Neogit<CR>", { noremap = true, silent = true })
 -- Format File
 keymap("n", "<leader>gf", ':lua require("conform").format()<CR>', { noremap = true, silent = true })
 
-keymap("n", "<leader>e", ":Trouble<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>e", ":Trouble diagnostics<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>n", "<cmd>lua HandleNeoTree()<CR>", { silent = true, noremap = true })
 

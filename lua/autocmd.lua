@@ -19,3 +19,16 @@ vim.cmd([[
     autocmd BufWritePre * lua require('conform').format()
   augroup END
 ]])
+
+vim.api.nvim_create_autocmd("DiagnosticChanged", {
+	callback = function()
+		local trouble = require("trouble")
+		local is_open = trouble.is_open()
+
+		local count = #vim.diagnostic.get(0)
+
+		if is_open and count == 0 then
+			trouble.close()
+		end
+	end,
+})
