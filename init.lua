@@ -25,6 +25,7 @@ vim.g.loaded_ruby_provider = 0
 -- Plugins Dirs
 require("lazy").setup({
 	{ import = "plugins" },
+	{ import = "plugins.lazy" },
 })
 
 -- Loading degli Snippets

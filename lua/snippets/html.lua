@@ -3,7 +3,7 @@ local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 
-ls.add_snippets("html", {
+local html_snippets = {
 	s("div", { t("<div>"), i(1), t("</div>") }),
 	s("span", { t("<span>"), i(1), t("</span>") }),
 	s("h1", { t("<h1>"), i(1), t("</h1>") }),
@@ -46,4 +46,8 @@ ls.add_snippets("html", {
 			"</html>",
 		}),
 	}),
-})
+}
+
+ls.add_snippets("html", html_snippets)
+ls.add_snippets("javascriptreact", html_snippets)
+ls.add_snippets("typescriptreact", html_snippets)

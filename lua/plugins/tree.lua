@@ -11,6 +11,7 @@ return {
 			require("nvim-treesitter.configs").setup({
 				auto_install = true,
 				sync_install = false,
+				ignore_install = { "phpdoc", "phpdoc_tag", "org" },
 				highlight = { enable = true },
 				indent = { enable = true },
 			})
@@ -26,7 +27,7 @@ return {
 			vim.treesitter.language.register("templ", "templ")
 		end,
 	},
-  {
+	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
 		dependencies = {
