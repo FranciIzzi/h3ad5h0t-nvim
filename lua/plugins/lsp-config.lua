@@ -25,7 +25,6 @@ return {
 					lua = { "stylua" },
 					python = { "isort", "black" },
 					go = { "goimports", "gofumpt" },
-					rust = { "rustfmt", lsp_format = "fallback" },
 					javascript = { "prettier", "prettierd", stop_after_first = true },
 					typescript = { "prettier", "prettierd", stop_after_first = true },
 					typescriptreact = { "prettier", "prettierd", stop_after_first = true },
