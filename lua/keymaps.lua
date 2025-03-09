@@ -40,6 +40,9 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", { noremap = true, silent = t
 keymap("v", "J", ":m '>+1<CR>gv=gv", { noremap = true })
 keymap("v", "K", ":m '<-2<CR>gv=gv", { noremap = true })
 
+keymap("v", "<", "<gv", { noremap = true })
+keymap("v", ">", ">gv", { noremap = true })
+
 function HandleNeoTree()
 	local is_neo_tree_open = function()
 		for _, win in pairs(vim.api.nvim_list_wins()) do
