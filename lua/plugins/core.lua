@@ -1,5 +1,5 @@
 return {
-  {
+	{
 		"kevinhwang91/nvim-ufo",
 		event = "BufReadPost",
 		dependencies = "kevinhwang91/promise-async",
@@ -31,20 +31,29 @@ return {
 		version = "*",
 		event = "VeryLazy",
 		config = function()
-        require("nvim-surround").setup({
-    surrounds = {
-        ["q"] = { add = { '"', '"' } },  -- aggiunge `q` come shortcut per `"`
-        ["Q"] = { add = { '[', ']' } },  -- aggiunge `q` come shortcut per `"`
-        ["b"] = { add = { "(", ")" } },  -- Aggiunge `b` per `()`
-        ["B"] = { add = { "{", "}" } },  -- Aggiunge `B` per `{}` 
-        ["t"] = {  -- Surround con tag HTML
-            add = function()
-                local tag = vim.fn.input("Tag: ")
-                return { "<" .. tag .. ">", "</" .. tag .. ">" }
-            end,
-        },
-    }
-})
+			require("nvim-surround").setup({
+				surrounds = {
+					["q"] = { add = { '"', '"' } }, -- aggiunge `q` come shortcut per `"`
+					["Q"] = { add = { "[", "]" } }, -- aggiunge `q` come shortcut per `"`
+					["b"] = { add = { "(", ")" } }, -- Aggiunge `b` per `()`
+					["B"] = { add = { "{", "}" } }, -- Aggiunge `B` per `{}`
+					["r"] = { add = { "<", ">" } },
+					["c"] = { add = { "/*", "*/" } },
+					["C"] = { -- Surround con tag HTML
+						add = function()
+							local left = vim.fn.input("Enter left part: ")
+							local right = vim.fn.input("Enter right part: ")
+							return { left, right }
+						end,
+					},
+					["t"] = { -- Surround con tag HTML
+						add = function()
+							local tag = vim.fn.input("Tag: ")
+							return { "<" .. tag .. ">", "</" .. tag .. ">" }
+						end,
+					},
+				},
+			})
 		end,
 	},
 	{
