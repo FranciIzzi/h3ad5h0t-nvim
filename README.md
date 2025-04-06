@@ -1,5 +1,5 @@
 # H3adVim
-The powerfull and cool IDE for speed up while you are working on your poject. Realized taking inspirations by Vs Code, but more performing .  It's also customizable  by you. Thank you guy, have fun.
+The powerfull and cool IDE for speed up while you are working on your poject. Customizable and blazing fast. Try it and have fun.
 
 # Pre-Requirements
 - Ensure to have installed Neovim on your system, and have at least the 0.9 v. If you don't have it, check this link to get it:  https://neovim.io/
