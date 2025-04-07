@@ -23,6 +23,9 @@ return {
 				},
 				formatters_by_ft = {
 					lua = { "stylua" },
+					sh = { "beautysh" },
+					zsh = { "beautysh" },
+					bash = { "beautysh" },
 					python = { "isort", "black" },
 					go = { "goimports", "gofumpt" },
 					javascript = { "prettier", "prettierd", stop_after_first = true },
@@ -52,8 +55,10 @@ return {
 					"gopls",
 					"ts_ls",
 					"pylsp",
+					"bashls",
 					"prismals",
 					"tailwindcss",
+					"rust_analyzer",
 				},
 				handlers = {
 					function(server_name) -- default handler (optional)

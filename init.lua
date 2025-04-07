@@ -18,6 +18,8 @@ vim.g.VM_mouse_mappings = 1
 vim.g.VM_default_mappings = 1
 vim.g.VM_silent_exit = 1
 
+vim.g.rustfmt_autosave = 1
+
 vim.g.python3_host_prog = os.getenv("HOME") .. "/Desktop/.myEnvs/venv/bin/python"
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0

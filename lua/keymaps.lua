@@ -1,3 +1,4 @@
+local newSet = vim.keymap.set
 local keymap = vim.api.nvim_set_keymap
 
 -- BufferLine Commands
@@ -8,9 +9,9 @@ keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = tr
 keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 
 -- Terminal Commands
-vim.keymap.set("n", "stj", ":lua SendTerminalJob()<CR>", { noremap = true, silent = true })
+newSet("n", "stj", ":lua SendTerminalJob()<CR>", { noremap = true, silent = true })
 keymap("n", "<leader>nt", "<cmd>terminal<CR>", { noremap = true, silent = true })
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
+newSet("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
 
 -- Split + Telescope
 keymap("n", "<leader>sv", "<cmd>lua Find_files_in_split('vsplit')<CR>", { noremap = true, silent = true })
@@ -25,11 +26,10 @@ keymap("n", "<leader>gg", ":Neogit<CR>", { noremap = true, silent = true })
 
 -- Format File
 keymap("n", "<leader>gf", ':lua require("conform").format()<CR>', { noremap = true, silent = true })
-
 keymap("n", "<leader>e", ":Trouble diagnostics<CR>", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>n", "<cmd>Neotree filesystem reveal left<CR>", { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>nc", "<cmd>Neotree close<CR>", { silent = true, noremap = true })
+newSet("n", "<leader>n", "<cmd>Neotree filesystem reveal left<CR>", { silent = true, noremap = true })
+newSet("n", "<leader>nc", "<cmd>Neotree close<CR>", { silent = true, noremap = true })
 
 -- Resize Windows
 keymap("n", "<C-Up>", ":resize -2<CR>", { noremap = true, silent = true })
@@ -43,21 +43,9 @@ keymap("v", "K", ":m '<-2<CR>gv=gv", { noremap = true })
 keymap("v", "<", "<gv", { noremap = true })
 keymap("v", ">", ">gv", { noremap = true })
 
-function HandleNeoTree()
-	local is_neo_tree_open = function()
-		for _, win in pairs(vim.api.nvim_list_wins()) do
-			if vim.bo[vim.api.nvim_win_get_buf(win)].filetype == "neo-tree" then
-				return true
-			end
-		end
-		return false
-	end
-	if is_neo_tree_open() then
-		vim.cmd("Neotree close")
-	else
-		vim.cmd("Neotree filesystem reveal left")
-	end
-end
+-- Forward/Backward curor position
+newSet("n", "<leader>o", "<C-o>", { desc = "Jump back" })
+newSet("n", "<leader>i", "<C-i>", { desc = "Jump forward" })
 
 function Find_files_in_split(split_type)
 	require("telescope.builtin").find_files({

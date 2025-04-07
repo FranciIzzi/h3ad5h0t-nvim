@@ -1,41 +1,20 @@
 return {
 	{
-		"emmanueltouzery/decisive.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("decisive").setup({})
-		end,
+		"hat0uma/csvview.nvim",
 		lazy = true,
-		ft = { "csv" },
-		keys = {
-			{
-				"<leader>cca",
-				":lua require('decisive').align_csv({})<cr>",
-				{ silent = true },
-				desc = "Align CSV",
-				mode = "n",
-			},
-			{
-				"<leader>ccA",
-				":lua require('decisive').align_csv_clear({})<cr>",
-				{ silent = true },
-				desc = "Align CSV clear",
-				mode = "n",
-			},
-			{
-				"[c",
-				":lua require('decisive').align_csv_prev_col()<cr>",
-				{ silent = true },
-				desc = "Align CSV prev col",
-				mode = "n",
-			},
-			{
-				"]c",
-				":lua require('decisive').align_csv_next_col()<cr>",
-				{ silent = true },
-				desc = "Align CSV next col",
-				mode = "n",
+		event = "VeryLazy",
+		ft = "csv",
+		opts = {
+			parser = { comments = { "#", "//", "/*", "*/", "--" } },
+			keymaps = {
+				textobject_field_inner = { "if", mode = { "o", "x" } },
+				textobject_field_outer = { "af", mode = { "o", "x" } },
+				jump_next_field_end = { "<Tab>", mode = { "n", "v" } },
+				jump_prev_field_end = { "<S-Tab>", mode = { "n", "v" } },
+				jump_next_row = { "<Enter>", mode = { "n", "v" } },
+				jump_prev_row = { "<S-Enter>", mode = { "n", "v" } },
 			},
 		},
+		cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
 	},
 }
