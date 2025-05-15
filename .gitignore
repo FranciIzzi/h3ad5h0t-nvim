@@ -6,3 +6,7 @@
 orgfiles/
 lazy-lock.json
 .git
+
+## On Working now
+go.lua
+rust.lua
