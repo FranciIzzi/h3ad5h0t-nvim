@@ -1,4 +1,5 @@
 return {
+	---@diagnostic disable: undefined-global
 	{
 		"nvim-tree/nvim-web-devicons",
 		lazy = true,

@@ -1,4 +1,5 @@
 return {
+	---@diagnostic disable: undefined-global
 	{
 		"kevinhwang91/nvim-ufo",
 		event = "BufReadPost",

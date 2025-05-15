@@ -1,4 +1,5 @@
 return {
+	---@diagnostic disable: undefined-global
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
@@ -73,7 +74,11 @@ return {
 							settings = {
 								Lua = {
 									diagnostics = {
-										globals = { "bit", "vim", "it", "describe", "before_eachj", "after_each" },
+										globals = { "vim", "bit", "it", "describe", "before_eachj", "after_each" },
+										disable = { "undefined-global" },
+									},
+									workspace = {
+										checkThirdParty = false, -- Evita warning su plugin esterni
 									},
 								},
 							},

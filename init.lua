@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+--
 -- Setup the Package Manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -24,19 +26,19 @@ vim.g.python3_host_prog = os.getenv("HOME") .. "/Desktop/.myEnvs/venv/bin/python
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
--- Plugins Dirs
+-- -- Plugins Dirs
 require("lazy").setup({
 	{ import = "plugins" },
 	{ import = "plugins.lazy" },
 })
 
--- Loading degli Snippets
+-- -- Loading degli Snippets
 require("luasnip.loaders.from_lua").lazy_load({ paths = { "./lua/snippets" } })
 
--- Setup dei Keybinding
+-- -- Setup dei Keybinding
 require("keymaps")
 
--- Setup degli AutoCommands
+-- -- Setup degli AutoCommands
 require("autocmd")
 
 -- Cursor settings

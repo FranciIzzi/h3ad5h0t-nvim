@@ -1,4 +1,5 @@
 return {
+	---@diagnostic disable: undefined-global
 	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },

@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 local newSet = vim.keymap.set
 local keymap = vim.api.nvim_set_keymap
 
