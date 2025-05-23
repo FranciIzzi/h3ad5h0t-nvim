@@ -40,6 +40,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", { noremap = true, silent = t
 
 keymap("v", "J", ":m '>+1<CR>gv=gv", { noremap = true })
 keymap("v", "K", ":m '<-2<CR>gv=gv", { noremap = true })
+keymap("n", "t", ":redo<CR>", { noremap = true })
 
 keymap("v", "<", "<gv", { noremap = true })
 keymap("v", ">", ">gv", { noremap = true })

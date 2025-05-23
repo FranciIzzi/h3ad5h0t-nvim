@@ -1,4 +1,5 @@
 ---@diagnostic disable: undefined-global
+---
 --
 -- Setup the Package Manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -40,6 +41,9 @@ require("keymaps")
 
 -- -- Setup degli AutoCommands
 require("autocmd")
+
+-- -- filetype extension
+vim.filetype.add({ extension = { templ = "templ" } })
 
 -- Cursor settings
 vim.cmd([[set guicursor=n-v-c:block-Cursor/lCursor,r-cr-o:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor]])

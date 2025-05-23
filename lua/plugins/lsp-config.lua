@@ -93,6 +93,7 @@ return {
 									plugins = {
 										pycodestyle = {
 											ignore = { "E501", "W503", "W391", "E203" },
+											maxLineLength = 150,
 										},
 									},
 								},

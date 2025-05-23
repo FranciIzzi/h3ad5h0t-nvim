@@ -1,9 +1,10 @@
 return {
 	{
 		"hat0uma/csvview.nvim",
+		ft = "csv",
 		lazy = true,
 		event = "VeryLazy",
-		ft = "csv",
+		cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
 		opts = {
 			parser = { comments = { "#", "//", "/*", "*/", "--" } },
 			keymaps = {
@@ -15,6 +16,5 @@ return {
 				jump_prev_row = { "<S-Enter>", mode = { "n", "v" } },
 			},
 		},
-		cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
 	},
 }
