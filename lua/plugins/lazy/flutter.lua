@@ -1,57 +1,40 @@
 return {
-	-- {
-	-- 	"mfussenegger/nvim-dap",
-	-- 	dependencies = {
-	-- 		"nvim-neotest/nvim-nio",
-	-- 		"rcarriga/nvim-dap-ui",
-	-- 	},
-	-- 	event = "VeryLazy",
-	-- 	config = function()
-	-- 		require("dapui").setup({
-	-- 			icons = { expanded = "▾", collapsed = "▸" },
-	-- 			layouts = {
-	-- 				{
-	-- 					elements = {
-	-- 						{ id = "scopes", size = 0.25 },
-	-- 						"breakpoints",
-	-- 						"stacks",
-	-- 						"watches",
-	-- 					},
-	-- 					size = 10,
-	-- 					position = "bottom",
-	-- 				},
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
-	{
-		"nvim-flutter/flutter-tools.nvim",
-		lazy = true,
-		ft = "dart",
-		cmd = { "FlutterRun", "FlutterHotReload", "FlutterHotRestart", "FlutterQuit" },
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"stevearc/dressing.nvim",
-		},
-		config = true,
-		-- config = function()
-		-- require("flutter-tools").setup({
-		-- 	debugger = {
-		-- 		enabled = true,
-		-- 		run_via_dap = true,
-		-- 		exception_breakpoints = {},
-		-- 		register_configurations = function(paths)
-		-- 			local dap = require("dap")
-		-- 			dap.adapters.dart = {
-		-- 				type = "executable",
-		-- 				command = paths.flutter_bin,
-		-- 				args = { "debug-adapter" },
-		-- 			}
-		-- 			dap.configurations.dart = {}
-		-- 			require("dap.ext.vscode").load_launchjs()
-		-- 		end,
-		-- 	},
-		-- })
-		-- end,
+	"nvim-flutter/flutter-tools.nvim",
+	lazy = true,
+	ft = "dart",
+	cmd = { "FlutterRun", "FlutterHotReload", "FlutterHotRestart", "FlutterQuit" },
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"stevearc/dressing.nvim",
 	},
+	config = function()
+		local flutter_tools = require("flutter-tools")
+		vim.keymap.set("n", "<leader>lt", ":FlutterLogToggle<CR>", { silent = true })
+		vim.keymap.set("n", "<leader>lc", ":FlutterLogClear<CR>", { silent = true })
+		vim.keymap.set("n", "<leader>hr", ":FlutterRestart<CR>", { silent = true })
+		vim.keymap.set("n", "<leader>fd", ":FlutterDevices<CR>", { silent = true })
+		vim.keymap.set("n", "<leader>fq", ":FlutterQuit<CR>", { silent = true })
+		flutter_tools.setup({
+			debugger = {
+				enabled = true,
+				run_via_dap = true,
+				register_configurations = function(_)
+					require("dap").configurations.dart = {
+						{
+							type = "dart",
+							request = "launch",
+							name = "Launch Flutter App",
+							dartSdkPath = "/home/h3ad5h0t/development/flutter/bin/cache/dart-sdk",
+							flutterSdkPath = "/home/h3ad5h0t/development/flutter",
+							program = "${workspaceFolder}/lib/main.dart",
+							cwd = "${workspaceFolder}",
+						},
+					}
+				end,
+			},
+			widget_guides = {
+				enabled = true,
+			},
+		})
+	end,
 }
