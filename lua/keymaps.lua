@@ -2,6 +2,14 @@
 local newSet = vim.keymap.set
 local keymap = vim.api.nvim_set_keymap
 
+-- Flutter Commands
+newSet("n", "<leader>lt", ":FlutterLogToggle<CR>", { silent = true })
+newSet("n", "<leader>lc", ":FlutterLogClear<CR>", { silent = true })
+newSet("n", "<leader>hr", ":FlutterRestart<CR>", { silent = true })
+newSet("n", "<leader>fd", ":FlutterDevices<CR>", { silent = true })
+newSet("n", "<leader>fe", ":FlutterEmulators<CR>", { silent = true })
+newSet("n", "<leader>fq", ":FlutterQuit<CR>", { silent = true })
+
 -- BufferLine Commands
 keymap("n", "<leader>bco", ":BufferLineCloseOthers<CR>", { noremap = true, silent = true })
 keymap("n", "<leader>bch", ":BufferLineCloseRight<CR>", { noremap = true, silent = true })
