@@ -4,7 +4,5 @@ return {
 	-- cmd = { "Convert" },
 	event = "VeryLazy",
 	ft = { "css", "scss", "html" },
-	config = function()
-		require("convert").setup()
-	end,
+	config = true,
 }
